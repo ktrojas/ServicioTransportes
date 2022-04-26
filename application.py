@@ -8,6 +8,10 @@ application.config.from_object(config['development'])
 
 conexion = MySQL(application)
 
+@application.route('/')
+def hello_world():
+    return "Hola Mundo"
+
 @application.route('/containers/<json_obj>', methods=['POST'])
 def hellow_world(json_obj):
     try:
